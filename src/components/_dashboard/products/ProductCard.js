@@ -3,8 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Box, Card, Link, Typography, Stack } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
-// utils
-import { fCurrency } from '../../../utils/formatNumber';
 //
 import Label from '../../Label';
 import ColorPreview from '../../ColorPreview';
@@ -67,10 +65,10 @@ export default function ShopProductCard({ product }) {
                 textDecoration: 'line-through'
               }}
             >
-              {priceSale && fCurrency(priceSale)}
+              {priceSale && priceSale}
             </Typography>
             &nbsp;
-            {fCurrency(price)}
+            {price}
           </Typography>
         </Stack>
       </Stack>

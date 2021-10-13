@@ -45,7 +45,7 @@ export default function AppCurrentSubject() {
     fill: { opacity: 0.48 },
     legend: { floating: true, horizontalAlign: 'center' },
     xaxis: {
-      categories: ['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math'],
+      categories: ['English', 'Physics', 'Geography', 'Chinese', 'Math'],
       labels: {
         style: {
           colors: [

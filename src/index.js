@@ -1,23 +1,40 @@
-// scroll bar
-import 'simplebar/src/simplebar.css';
-
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-
-//
+import { BrowserRouter } from 'react-router-dom';
+import { setContext } from '@apollo/client/link/context';
+import 'simplebar/src/simplebar.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorker from './serviceWorker';
 
-// ----------------------------------------------------------------------
+const httpLink = createHttpLink({
+  uri: 'http://127.0.0.1:8000/graphql/'
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `JWT ${token}` : ''
+    }
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
-  <HelmetProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </HelmetProvider>,
+  <ApolloProvider client={client}>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 

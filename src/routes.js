@@ -1,17 +1,11 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-// layouts
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
-//
-import Login from './pages/Login';
-import Register from './pages/Register';
+import About from './pages/About';
 import DashboardApp from './pages/DashboardApp';
-import Products from './pages/Products';
-import Blog from './pages/Blog';
-import User from './pages/User';
+import Login from './pages/Login';
 import NotFound from './pages/Page404';
-
-// ----------------------------------------------------------------------
+import Posts from './pages/Posts';
 
 export default function Router() {
   return useRoutes([
@@ -21,9 +15,10 @@ export default function Router() {
       children: [
         { path: '/', element: <Navigate to="/dashboard/app" replace /> },
         { path: 'app', element: <DashboardApp /> },
-        { path: 'user', element: <User /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'posts', element: <Posts /> },
+        { path: 'about', element: <About /> }
+        // { path: 'products', element: <Products /> },
+        // { path: 'blog', element: <Blog /> }
       ]
     },
     {
@@ -31,7 +26,7 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         { path: 'login', element: <Login /> },
-        { path: 'register', element: <Register /> },
+        // { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
         { path: '/', element: <Navigate to="/dashboard" /> },
         { path: '*', element: <Navigate to="/404" /> }

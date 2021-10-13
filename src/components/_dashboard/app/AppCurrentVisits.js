@@ -3,9 +3,6 @@ import ReactApexChart from 'react-apexcharts';
 // material
 import { useTheme, styled } from '@material-ui/core/styles';
 import { Card, CardHeader } from '@material-ui/core';
-// utils
-import { fNumber } from '../../../utils/formatNumber';
-//
 import { BaseOptionChart } from '../../charts';
 
 // ----------------------------------------------------------------------
@@ -50,7 +47,7 @@ export default function AppCurrentVisits() {
     tooltip: {
       fillSeriesColor: false,
       y: {
-        formatter: (seriesName) => fNumber(seriesName),
+        formatter: (seriesName) => seriesName,
         title: {
           formatter: (seriesName) => `#${seriesName}`
         }
