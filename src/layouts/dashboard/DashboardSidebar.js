@@ -1,19 +1,14 @@
 import { Avatar, Box, Drawer, Link, Typography } from '@material-ui/core';
-// material
 import { styled } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { MHidden } from '../../components/@material-extend';
-// components
 import Logo from '../../components/Logo';
 import NavSection from '../../components/NavSection';
 import Scrollbar from '../../components/Scrollbar';
 import account from '../../_mocks_/account';
-//
 import sidebarConfig from './SidebarConfig';
-
-// ----------------------------------------------------------------------
 
 const DRAWER_WIDTH = 280;
 
@@ -32,7 +27,6 @@ const AccountStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.grey[200]
 }));
 
-// ----------------------------------------------------------------------
 
 DashboardSidebar.propTypes = {
   isOpenSidebar: PropTypes.bool,

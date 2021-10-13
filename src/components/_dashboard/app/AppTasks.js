@@ -1,4 +1,3 @@
-// material
 import {
   Box,
   Card,

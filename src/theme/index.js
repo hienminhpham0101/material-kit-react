@@ -5,7 +5,6 @@ import { ThemeProvider, createTheme, StyledEngineProvider } from '@material-ui/c
 import shape from './shape';
 import palette from './palette';
 import typography from './typography';
-import GlobalStyles from './globalStyles';
 import componentsOverride from './overrides';
 import shadows, { customShadows } from './shadows';
 
@@ -32,7 +31,6 @@ export default function ThemeConfig({ children }) {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <GlobalStyles />
         {children}
       </ThemeProvider>
     </StyledEngineProvider>

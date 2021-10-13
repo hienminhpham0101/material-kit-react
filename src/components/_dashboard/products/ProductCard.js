@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
-// material
 import { Box, Card, Link, Typography, Stack } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
-//
 import Label from '../../Label';
 import ColorPreview from '../../ColorPreview';
-
-// ----------------------------------------------------------------------
 
 const ProductImgStyle = styled('img')({
   top: 0,
@@ -16,8 +12,6 @@ const ProductImgStyle = styled('img')({
   objectFit: 'cover',
   position: 'absolute'
 });
-
-// ----------------------------------------------------------------------
 
 ShopProductCard.propTypes = {
   product: PropTypes.object
