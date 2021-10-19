@@ -1,6 +1,4 @@
 import { Tooltip } from '@material-ui/core';
-import moreOutlined from '@iconify/icons-ant-design/more-outlined';
-import { getIcon } from '../../layouts/dashboard/SidebarConfig';
 
 const tooltip = (value) => (
   <Tooltip title={value || ''} placement="right">
